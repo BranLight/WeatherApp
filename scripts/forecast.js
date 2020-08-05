@@ -1,4 +1,4 @@
-const key = "RD7hYx4iXlopkd9iCMUBwwU7uFRbfz7Z";
+const key = "82lvXtmG63clzz8wddG5l3FB1aJyNYjh";
 
 const getCity = async (city) => {
   const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
@@ -17,14 +17,14 @@ const getCurrentConditions = async (city_code) => {
   const response = await fetch(proxyUrl + base + query);
   const data = await response.json();
 
-  return data;
+  return data[0];
 };
 
-getCity('laurel')
-  .then(data => {
-    return getCurrentConditions(data.Key)
-  }).then(data => {
-    console.log(data);
-  }).catch(err => {
-    console.log(err);
-  });
+// getCity('laurel')
+//   .then(data => {
+//     return getCurrentConditions(data.Key)
+//   }).then(data => {
+//     console.log(data);
+//   }).catch(err => {
+//     console.log(err);
+//   });
