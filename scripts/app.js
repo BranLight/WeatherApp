@@ -26,7 +26,7 @@ const update_ui = (data) => {
   icon.setAttribute('src', icon_source);
 
   // ternary operator to determine the background based on time of day
-  time_source = weather.IsDayTime ? 'backgrounds/day.svg' : 'backgrounds/night.svg';
+  let time_source = weather.IsDayTime ? 'backgrounds/day.svg' : 'backgrounds/night.svg';
 
   time.setAttribute('src', time_source);
 
