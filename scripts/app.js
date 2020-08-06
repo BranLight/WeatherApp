@@ -58,4 +58,15 @@ city_form.addEventListener('submit', e => {
   update_city(city)
     .then(data => update_ui(data))
     .catch(err => console.log(err));
+
+  // set local storage
+  localStorage.setItem('city', city);
 });
+
+// check if the user has a city in local storage
+// if there is, automatically show the weather
+if(localStorage.getItem('city')){
+  update_city(localStorage.getItem('city'))
+    .then(data => update_ui(data))
+    .catch(err => console.log(err));
+}
