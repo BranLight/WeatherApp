@@ -1,4 +1,4 @@
-const key = "82lvXtmG63clzz8wddG5l3FB1aJyNYjh";
+const key = "// This is where you will place your AccuWeather API key after creating an account here (https://developer.accuweather.com/) and registering a new application";
 
 const getCity = async (city) => {
   const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
