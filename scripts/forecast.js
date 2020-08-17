@@ -19,12 +19,3 @@ const getCurrentConditions = async (city_code) => {
 
   return data[0];
 };
-
-// getCity('laurel')
-//   .then(data => {
-//     return getCurrentConditions(data.Key)
-//   }).then(data => {
-//     console.log(data);
-//   }).catch(err => {
-//     console.log(err);
-//   });
