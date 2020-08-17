@@ -1,7 +1,7 @@
 # WeatherApp
 A simple web application for displaying city weather data using the AccuWeather API. This project helped with my understanding of JavaScript fetch requests and request handling as well as asynchronous task flow and handling JSON data. This is part of a course on JavaScript from Sean Pelling on Udemy.
 
-![weatherAppPreview](https://user-images.githubusercontent.com/63391309/90373513-9ff9e900-e037-11ea-8a60-e0979f35f89f.png)
+![weatherAppPreview](https://user-images.githubusercontent.com/63391309/90373575-bb64f400-e037-11ea-88ac-a98651616373.png)
 
 ### How does this application work?
 
