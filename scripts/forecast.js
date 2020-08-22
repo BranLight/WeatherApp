@@ -1,21 +1,33 @@
-const key = "// This is where you will place your AccuWeather API key after creating an account here (https://developer.accuweather.com/) and registering a new application";
+class Forecast{
+  constructor(){
+    this.key = "82lvXtmG63clzz8wddG5l3FB1aJyNYjh";
+    this.city = "http://dataservice.accuweather.com/locations/v1/cities/search";
+    this.weather = "http://dataservice.accuweather.com/currentconditions/v1/"
+  }
 
-const getCity = async (city) => {
-  const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-  const query = `?apikey=${key}&q=${city}`;
-  var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  const response = await fetch(proxyUrl + base + query);
-  const data = await response.json();
+  async updateCity(city){
+    const city_details = await this.getCity(city);
+    const weather = await this.getCurrentConditions(city_details.Key);
 
-  return data[0];
-};
+    return {
+      city_details,
+      weather
+    };
+  }
 
-const getCurrentConditions = async (city_code) => {
-  const base = "http://dataservice.accuweather.com/currentconditions/v1/";
-  const query = `${city_code}?apikey=${key}`;
-  var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  const response = await fetch(proxyUrl + base + query);
-  const data = await response.json();
+  async getCity(city){
+    const query = `?apikey=${this.key}&q=${city}`;
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const response = await fetch(proxyUrl + this.city + query);
+    const data = await response.json();
+    return data[0];
+  }
 
-  return data[0];
-};
+  async getCurrentConditions(city_code){
+    const query = `${city_code}?apikey=${this.key}`;
+    var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    const response = await fetch(proxyUrl + this.weather + query);
+    const data = await response.json();
+    return data[0];
+  }
+}
