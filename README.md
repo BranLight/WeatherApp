@@ -1,4 +1,4 @@
-# WeatherApp
+# Weather Card
 A simple web application for displaying city weather data using the AccuWeather API. This project helped with my understanding of JavaScript fetch requests and request handling as well as asynchronous task flow and handling JSON data. This is part of a course on JavaScript from Sean Pelling on Udemy.
 
 
